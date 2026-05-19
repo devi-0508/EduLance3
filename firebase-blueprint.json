@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the platform (freelancer, client, or admin).",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The user's full name." },
+        "email": { "type": "string", "format": "email", "description": "The user's email address." },
+        "role": { "type": "string", "enum": ["freelancer", "client", "admin"], "description": "The user's role." },
+        "resumeLink": { "type": "string", "format": "uri", "description": "Link to the user's resume (optional)." },
+        "portfolioLink": { "type": "string", "format": "uri", "description": "Link to the user's portfolio or GitHub (optional)." },
+        "verificationFolderLink": { "type": "string", "format": "uri", "description": "Link to the user's verification folder (required)." },
+        "skills": { "type": "array", "items": { "type": "string" }, "description": "List of skills the freelancer has." },
+        "isVerified": { "type": "boolean", "description": "Whether the user has been verified by an admin." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the user was created." }
+      },
+      "required": ["name", "email", "role", "verificationFolderLink", "isVerified", "createdAt"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "A project posted by a client.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The project title." },
+        "description": { "type": "string", "description": "The project description." },
+        "skills": { "type": "array", "items": { "type": "string" }, "description": "List of skills required for the project." },
+        "budget": { "type": "number", "description": "The project budget." },
+        "status": { "type": "string", "enum": ["open", "in progress", "completed"], "description": "The current status of the project." },
+        "clientId": { "type": "string", "description": "The UID of the client who posted the project." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the project was created." }
+      },
+      "required": ["title", "description", "skills", "budget", "status", "clientId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Projects posted on the platform."
+    }
+  }
+}

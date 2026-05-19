@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EduLance</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="register.js"></script>
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Create Your Account</h2>
+            <form id="register-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Devi P Biju">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="juzchillin109@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" required>
+                            <option value="freelancer">Freelancer (Student)</option>
+                            <option value="client">Client (Project Owner)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="verificationFolderLink">Verification Folder Link (Required)</label>
+                        <input type="url" id="verificationFolderLink" required placeholder="https://drive.google.com/drive/folders/...">
+                        <p class="help-text">Provide a link to your student ID and other verification documents.</p>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="portfolioLink">Portfolio / GitHub Link (Optional)</label>
+                        <input type="url" id="portfolioLink" placeholder="https://github.com/account">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="resumeLink">Resume Link (Optional)</label>
+                        <input type="url" id="resumeLink" placeholder="https://drive.google.com/file/...">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Register</button>
+            </form>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">Already have an account? <a href="login.html" style="color: var(--secondary-color);">Login here</a></p>
+        </div>
+    </main>
+
+    <div id="modal-container"></div>
+
+    <footer>
+        <p>&copy; 2026 EduLance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

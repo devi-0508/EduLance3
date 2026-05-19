@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EduLance</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="login.js"></script>
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Login to EduLance</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">Don't have an account? <a href="register.html" style="color: var(--secondary-color);">Register here</a></p>
+        </div>
+    </main>
+
+    <div id="modal-container"></div>
+
+    <footer>
+        <p>&copy; 2026 EduLance. All rights reserved.</p>
+    </footer>
+</body>
+</html>
