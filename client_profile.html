@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Profile - EduLance</title>
+  <script type="module" crossorigin src="/EduLance3/assets/client_profile-KCHap6m4.js"></script>
+  <link rel="modulepreload" crossorigin href="/EduLance3/assets/index-CGrZZ24Z.js">
+  <link rel="stylesheet" crossorigin href="/EduLance3/assets/index-CsNfIbyC.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <main class="container">
+        <h1>Client Profile</h1>
+        <p>Post projects and manage your talent search.</p>
+
+        <section class="post-project-section">
+            <h2>Post a New Project</h2>
+            <div class="form-container" style="margin: 2rem 0; max-width: 100%;">
+                <form id="post-project-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="title">Project Title</label>
+                            <input type="text" id="title" required placeholder="e.g., Build a React Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget (₹)</label>
+                            <input type="number" id="budget" required placeholder="Enter project budget">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="description">Project Description</label>
+                            <textarea id="description" required placeholder="Describe the project goals and requirements" rows="4"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="skills">Required Skills (comma separated)</label>
+                            <input type="text" id="skills" required placeholder="e.g., React, Node.js, CSS">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Project</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="my-projects-section">
+            <h2>Your Posted Projects</h2>
+            <div class="filters" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <select id="filter-status">
+                    <option value="all">All Statuses</option>
+                    <option value="open">Open</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <input type="number" id="filter-min-budget" placeholder="Min Budget">
+                <input type="number" id="filter-max-budget" placeholder="Max Budget">
+            </div>
+            <div id="projects-container" class="card-grid">
+                <p>Loading your projects...</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-container"></div>
+
+    <footer>
+        <p>&copy; 2026 EduLance. All rights reserved.</p>
+    </footer>
+</body>
+</html>
