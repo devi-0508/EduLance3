@@ -72,7 +72,7 @@ service cloud.firestore {
              data.role in ['freelancer', 'client', 'admin'] &&
              isValidUrl(data.verificationFolderLink) &&
              data.isVerified is bool &&
-             data.createdAt is timestamp &&
+             (data.createdAt is timestamp || data.createdAt == request.time) &&
              data.skills is list &&
              (!('resumeLink' in data) || (data.resumeLink is string && isValidUrl(data.resumeLink))) &&
              (!('portfolioLink' in data) || (data.portfolioLink is string && isValidUrl(data.portfolioLink)));
