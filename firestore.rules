@@ -116,6 +116,8 @@ service cloud.firestore {
                         request.resource.data.role == resource.data.role &&
                         request.resource.data.isVerified == resource.data.isVerified &&
                         request.resource.data.email == resource.data.email);
+
+      allow delete: if isAdmin();
     }
 
     match /projects/{projectId} {
