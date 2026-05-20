@@ -23,10 +23,10 @@ const updateNavbar = async (user) => {
                     const role = userData.role;
 
                     if (role === 'freelancer') {
-                        navContent += `<a href="freelancer_profile.html">Profile</a>`;
-                        navContent += `<a href="projects.html">Projects</a>`;
-                        navContent += `<a href="matched_projects.html">Matched Projects</a>`;
-                    } else if (role === 'client') {
+    navContent += `<a href="freelancer_profile.html">Profile</a>`;
+    navContent += `<a href="projects.html">Projects</a>`;  // ← delete this line
+    navContent += `<a href="matched_projects.html">Matched Projects</a>`;
+} else if (role === 'client') {
                         navContent += `<a href="client_profile.html">Profile</a>`;
                         navContent += `<a href="matched_projects.html">Matched Freelancers</a>`;
                     } else if (role === 'admin') {
